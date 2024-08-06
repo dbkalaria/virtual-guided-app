@@ -17,7 +17,7 @@ def process_frame(frame):
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
     transformed_frame = TRANSFORMER(frame).to(DEVICE)
-    boxes, classes, names, confidences = detect_obstacles(transformed_frame)
+    boxes, classes, names, confidences = detect_obstacles(frame)
     depth_map = estimate_depth(frame, transformed_frame)
 
     objects_distances_list = []

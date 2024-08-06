@@ -7,9 +7,9 @@ DEPTH_ESTIMATION_MODEL_LIST = {
     "l": "DPT_Large"
 }
 
-DEPTH_ESTIMATION_MODEL_TYPE = DEPTH_ESTIMATION_MODEL_LIST["s"] 
+DEPTH_ESTIMATION_MODEL_TYPE = DEPTH_ESTIMATION_MODEL_LIST["m"] 
 
-OBSTACLE_DETECTION_MODEL = YOLO('yolov9s.pt')
+OBSTACLE_DETECTION_MODEL = YOLO('yolov8l.pt')
 DEPTH_ESTIMATION_MODEL = torch.hub.load("intel-isl/MiDaS", DEPTH_ESTIMATION_MODEL_TYPE)
 
 DEVICE = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
